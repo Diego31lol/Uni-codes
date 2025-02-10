@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Primer div: Encabezado -->
+    <div class="header">
+       
+        <!-- Parte izquierda: Cuadrados superpuestos -->
+        <div class="left-section">
+            <div class="square-bottom"></div>
+            <div class="square-top">
+                <img src="img/img1.jpg" alt="Foto" class="credential-photo">
+                <div class="credential-text">
+                    <p>Diego Hernandez Bernal</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!-- Parte derecha: Cuadrado con texto -->
+        <div class="right-section">
+            <div class="square-right">
+                <p>Bienvenidos a mi página, aquí podrán conocer un poco sobre mí, asi de que muy poquito. <br> <br> Esta página está hecha para compartir información sobre mí y algunos detalles de mi vida..</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segundo div: Texto y enlaces (centrado) -->
+    <div class="text-section">
+        <p>Mi nombre es Diego, pero me conocen mejor como Lua.<br> Uso este apodo para evitar la confusión con tantos Diegos que hay por ahí. Lua proviene del apellido de mi papá, un apellido reconocido en Veracruz, ciudad de donde es su familia. Nací en Querétaro y tengo 19 años. Actualmente estudio Software en la Universidad Autónoma de Querétaro (UAQ).<br> Tengo mala memoria, suelo recordar emociones y sentimiento antes que las situaciones mismas, me considero una persona bastante simple,conformista y sin mucho que destacar, de igual manera  confío plenamente en lo que hago y, aunque siempre hay margen de mejora, normalmente las cosas me salen bien, en otras palabras, soy increible <br><br> Estas son mis redes sociales más usadas:</p>
+        <a href="#">Instagram</a> |
+        <a href="#">Discord</a> |
+        <a href="#">Tinder</a>
+    </div>
+    <div class="guia">
+        <p>Selecciona alguna opcion para saber más de mi</p>
+    </div>
+    <!-- Tercer div: Cuadrados redondeados con imágenes y texto -->
+    <div class="cards-section">
+        <div class="card" onclick="showContent(1)">
+            <img src="img/hogar.png" >
+            <p>Familia</p>
+        </div>
+        <div class="card" onclick="showContent(2)">
+            <img src="img/deportes-con-balones.png" >
+            <p>Deportes</p>
+        </div>
+        <div class="card" onclick="showContent(3)">
+            <img src="img/viendo-una-pelicula.png" >
+            <p>Entretenimiento</p>
+        </div>
+        <div class="card" onclick="showContent(4)">
+            <img src="img/musica.png">
+            <p>Musica</p>
+        </div>
+        <div class="card" onclick="showContent(5)">
+            <img src="img/amor.png" >
+            <p>Yo</p>
+        </div>
+    </div>
+
+    <!-- Div dinámico que cambia según el botón seleccionado -->
+    <div id="dynamicContent" class="dynamic-content">
+        <img id="dynamicImage" src="" alt="Imagen dinámica">
+        <p id="dynamicText"></p>
+    </div>
+
+    <script>
+        function showContent(id) {
+            const content = {
+                1: {text: "Mi familia está compuesta por mi madre, Griselda Bernal, quien es maestra de preparatoria y actualmente enseña en el CESBA. A ella le apasionan las motos y es parte de un motoclub donde viajan frecuentemente por todo México. Ha recorrido muchos lugares, como Sinaloa y toda la costa de Veracruz, entre otros, disfrutando de rodar en moto.\nMi padre, Luis Miguel Lua, es maestro de primaria y enseña en el campo militar. Adora el basquetbol, es muy bueno en él, jugó en varias divisiones a lo largo de su vida y fue maestro de este deporte. Hoy en día, sigue jugando cada semana en torneos de basquetbol.\nTengo tres hermanos menores: Enrique, de 18 años, que está interesado en estudiar electromecánica; Derek, de 12 años, y Eder, de 10 años, ambos en primaria. A Enrique le gusta ir al gimnasio y salir, ya que se aburre mucho en casa. Derek y Eder disfrutan jugar videojuegos, tanto en sus celulares como en consolas.Mi abuela materna, Martha Salazar, a quien le decimos Tita, es muy talentosa con las manualidades. Le gusta tejer y sabe hacer pulseras, collares, aretes, ropa y crochet.\nHemos vivido en varias ciudades, incluyendo Puebla, Ciudad de México, Oaxaca, Veracruz, Córdoba y Toluca, debido a diferentes situaciones. Actualmente, llevamos ya varios años viviendo en Querétaro y estamos muy cómodos actualmente. A lo largo de los años, mis padres siempre han logrado salir adelante, trabajando en diferentes cosas como lavar coches, vender comida, limpiar casas, repartir productos, dar clases particulares, cursos de verano y también trabajando como niñeros, todo eso siempre lo hemos hecho en familia. Aprecio muchísimo todo lo que han hecho por nosotros y el esfuerzo que han puesto para llegar hasta donde estamos hoy. Actualmente estamos muy felices y no nos falta nada.", img: "imagen1.jpg" },
+                2: { text: "Me gusta jugar basquetbol y voleibol, voy al gimnasio ocasionalmente, no me emociona ver deportes en general asimismo no apoyo a ningun equipo en especial, pero puedo entretenerme viéndolos si los encuentro interesantes; a lo largo de mi vida he practicado varios deportes porque mis padres siempre me incentivaron a hacerlo: boxeo por un año, natación por otro, karate por un año, básquetbol durante dos años, béisbol por un año, fútbol por un año y tocho por medio año; no me considero especialmente bueno en ningún deporte, pero me considero bastante atlético y habilidoso, me defiendo bastante bien; me gusta jugar ping pong y participé en torneos de ajedrez en mi infancia; lo que menos me gusta jugar es fútbol, pero disfruto cualquier otro deporte, aunque a lo largo de mi vida siempre perdí el interés y probé diferentes cosas; no soy una persona que se comprometa mucho con entrenar, aunque me gustaría entrenar varias cosas, no entreno nada de forma regular, pero disfruto practicar deportes de manera casual.", img: "imagen2.jpg" },
+                3: { text: "Me gusta ver películas y series, disfruto mucho de los diferentes géneros, pero especialmente aquellas con una buena historia o dirección; he visto muchas películas de distintos géneros, destacando algunas como 'Al filo del mañana', películas de Tom Cruise, 'Eternals', las de Iron Man, las de Batman, 'Hancock', 'Lucy', 'Los Ilusionistas', 'Interstellar', 'Scary Movie', 'Suicide Squad', 'Hasta el último hombre', 'Blade Runner', el género distópico, 'El origen', 'John Wick', 'Nobody', '60 Seconds', 'Sherlock Holmes', 'Spiderman', 'Pasajeros', 'Tren bala', 'Oppenheimer', entre otras; no me gustan las películas de terror, pero algunas de suspenso como 'Smile' y 'Vértigo' me han gustado mucho; en series, disfruto muchas como 'Suits', 'Breaking Bad', 'Cyberpunk', 'Arcane', 'La Casa de Papel', 'How to Sell Drugs Fast', 'Better Call Saul', 'The Umbrella Academy', 'Control Z', 'Sherlock', 'Daredevil', 'Luke Cage', 'The Boys', 'Invencible', 'Rick and Morty', 'Smiling Friends', 'Black Mirror', 'Love Death Robots', 'Arrow', 'Flash', 'Loki', 'Malcolm', 'The Punisher', 'Peacemaker', 'El Increíble Mundo de Gumball', 'Reacher', 'Harley Quinn', 'You', entre otras; aunque me gusta ver series, me distraigo fácilmente y pierdo el interés; también me gustan mucho los animes, destacando algunos como 'Dr. Stone', 'Re:Zero', 'Solo Leveling', 'Overlord', 'Demon Slayer', 'Sakamoto Days', 'Dandadan', 'My Hero Academia', 'Konosuba', 'Tensei Shira Slime', 'Classroom of the Elite', 'Ragna Crimson', 'Sou Sou no Frieren', 'Jujutsu Kaisen', 'Mushoku Tensei', 'Horimiya', 'Oshi no Ko', 'Vinland Saga', 'Jigokuraku', 'Tokyo Revengers', 'Chainsaw Man', 'Made in Abyss', 'Love is War', 'Tomodachi Game', 'De Yakuza a Amo de Casa', 'Nanatsu no Taiza', 'The Promised Neverland', 'Fire Force', 'Gleipnir', 'Darwin's Game', 'Death Note', 'Sword Art Online', 'Youjo Senki', 'Fate', 'Bunny Girl Senpai', 'Angels of Death', 'Quiero Comerme Tu Páncreas', 'Your Lie in April', 'Steins Gate', 'Darling in the Franxx', 'Black Clover', 'No Game No Life', 'Rewrite', 'Your Name', 'Death Parade', 'Gate', 'Parasyte', 'Charlotte', 'Kyoukai no Kanata', 'Hunter x Hunter', entre otros; mencionando de manera honorífica 'Attack on Titan', considerado por mí y muchos como el mejor anime. Considero que tengo gustos bastante amplios y disfruto ver diferentes tipos de historias.", img: "imagen3.jpg" },
+                4: { text: "Tengo gustos musicales muy amplios, pero mis géneros más recurrentes son el trap argentino y el rap; mis instrumentos favoritos son el piano y el violín. Estudié piano durante un año, pero perdí el interés de seguir asistiendo a clases y actualmente no tengo habilidad alguna. Mis artistas favoritos provienen de la escena argentina y algunos de la española, pero tengo un amplio repertorio de música y artistas, entre los que destacan Duki, Cro, Xenon, Lit Killah, Zarcort, Cyclo, Dillom, Dua Lipa, Martin Garrix, Enrique Iglesias, Shakira, Café Tacvba, Babi, 3AM, Sabino, Daniel Spalla, Amanda Miguel, Khea, Luis Fonsi, Porta, Sofía Reyes, Abraham Mateo, The Cranberries, Aimer, Lisa, Hombres G, Ed Maverick, Carlos Vives, Calle 13, Tito El Bambino, Daddy Yankee, Mago de Oz, Marc Anthony, Marco Antonio Solís, Chayanne, Camila, Jarabe de Palo, El Cuarteto de Nos, Zoé, Bunbury, Chino y Nacho, The Neighbourhood, Arctic Monkeys, Gloria Trevi, Alejandra Guzmán, Espinoza Paz, Aleks Syntek, Radiohead, Coldplay, Twenty One Pilots, León Larregui, Jesse y Joy, Joan Sebastián, José José, Humbe, Pepe Aguilar, Maná, La Oreja de Van Gogh, Pxndx, Los Bunkers, Shawn Mendes, Natalia Lafourcade, El Tri, Nek, Walls, Jossean Log, YSY A, Elefante, Junior H, Natanael Cano, Feid, Mora, Bad Bunny, T3R Elemento, Don Omar, Banda MS, Coda, Luis Miguel, Panteón Rococó, Stray Kids, Manuel Medrano, Eve, Caifanes, Queen, Lana del Rey, Nicki Nicole, Myke Towers, Fuerza Regida, The Living Tombstone, Kalimba, Banda El Recodo, Fey, Calibre 50, Juanes, Cartel de Santa, Belinda, Kali Uchis, Wos, Sin Bandera, Mili, Barderos, Siddhartha, Serbia, Enjambre, La Mosca, Hombres G, Los Enanitos Verdes, Sabrina Carpenter, Marco Antonio Solís, División Minúscula, Mijares, DLD, Los Caligaris, Maluma, Myth and Roid, Mon Laferte, Los Tigres del Norte, Paty Cantú, entre otros. Generalmente, casi no escucho música en inglés, prefiero en español, como se puede observar tengo gustos muy variados de musica me gusta escuchar todo tipo y son contados con una mano los generos que no disfruto escuchar. La música es mi cosa favorita en el mundo, no logro imaginarme un mundo sin ella.", img: "imagen4.jpg" },
+                5: { text: "En mi día a día, disfruto mucho de la compañía de mis amigos y familia, así como de disfrutar el ambiente en el que me encuentro. Intento siempre aprovechar el momento presente, sin importar qué esté haciendo. A lo largo de mi vida, me he dedicado a trabajar en mí mismo, buscando no necesariamente la mejor versión de mí, sino aquella en la que me siento más cómodo. Este proceso ha tomado años de esfuerzo y búsqueda, pero hoy me siento orgulloso de quien soy. Tengo plena confianza en mí mismo y la comodidad conmigo mismo es mi prioridad. A lo largo del tiempo, he aprendido que la comodidad personal es lo que más valoro y, aunque mi filosofía puede parecer que busque hacer lo menos posible, creo que la vida es demasiado corta para no disfrutarla a su máximo potencial en mis propios terminos. Todo lo que hago, lo hago sin arrepentimientos, ya que eso es algo que no pienso llevar conmigo en mi pasado, presente y futuro sin importar que. Siempre intento disfrutar el momento, sin importar donde me encuentre o lo que esté haciendo. Lo que más disfruto es pasar tiempo en mi ordenador, jugando, o simplemente encerrado en mi cuarto, viendo alguna serie, película o escuchando música. El tiempo conmigo mismo es lo que más valoro y respeto, y me he dado cuenta de que mi vida gira en torno a mantener mi espacio personal, mis estudios, mi trabajo y mi futuro de tal forma que me permita seguir disfrutando de este estilo de vida que llevo, un estilo que me hace sentir cómodo y feliz. Este equilibrio entre disfrutar el presente, mantener mi paz interior y buscar mi propia comodidad es lo que define mi día a día. Mi vida está pensada para seguir cultivando esa calma y felicidad, y estoy contento con el camino que he recorrido para llegar hasta aquí. Me considero una persona simple y hasta conformista pero realmente no aspiro a mucho mientras este comodo con la forma y condicion en la que vivo no necesito buscar más.No espero una vida larga, ni me interesa, las cosas van a pasar como tengan que pasar no me preocupo de eso, vivo de tal manera que estoy preparado para mi fin en cualquier momento.", img: "imagen5.jpg" }
+              };
+
+            if (content[id]) {
+                document.getElementById("dynamicText").textContent = content[id].text;
+                document.getElementById("dynamicImage").src = content[id].img;
+                document.getElementById("dynamicContent").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

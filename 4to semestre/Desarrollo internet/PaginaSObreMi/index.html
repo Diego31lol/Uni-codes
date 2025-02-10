@@ -65,7 +65,7 @@
 
     <!-- Div dinámico que cambia según el botón seleccionado -->
     <div id="dynamicContent" class="dynamic-content">
-        <img id="dynamicImage" src="" alt="Imagen dinámica">
+     <!-- <img id="dynamicImage" src="" alt="Imagen dinámica">-->
         <p id="dynamicText"></p>
     </div>
 
@@ -81,7 +81,7 @@
 
             if (content[id]) {
                 document.getElementById("dynamicText").textContent = content[id].text;
-                document.getElementById("dynamicImage").src = content[id].img;
+               // document.getElementById("dynamicImage").src = content[id].img;
                 document.getElementById("dynamicContent").style.display = "block";
             }
         }

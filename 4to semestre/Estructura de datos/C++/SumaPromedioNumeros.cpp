@@ -9,7 +9,7 @@ float PromedioNumeros(int);
 
 // Función main
 int main() {
-    int num1, num2, num3;
+    int num1, num2, num3; 
 
     // Pedir al usuario 3 números
     cout << "Ingresa el primer numero: ";

@@ -1,0 +1,68 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkgreen;
+    font-size: medium;
+}
+
+body {
+    margin: 0 80px;
+    background-color: aquamarine;
+}
+
+h1 {
+    text-align: center;
+}
+
+#titulo1 {
+    font-size: 30px;
+    letter-spacing: 5px;
+    color: brown;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.titulos {
+    font-size: 30px;
+}
+
+p {
+    text-align: justify;
+}
+
+hh {
+    margin: 30 80px 10px 80px;
+    letter-spacing: normal;
+    text-align: justify;
+    line-height: 3; 
+    border: 2px solid rgb(30, 30, 183);
+    padding: 10px; 
+}
+
+#botones {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#botones input {
+    background-color: white;
+    border: 2px solid darkgreen;
+    color: darkgreen;
+    padding: 10px 20px;
+    font-size: medium;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#botones input:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+ul {
+    margin: 20px;
+    padding: 0;
+    list-style-type: square;
+    color: darkgreen;
+}
+
+

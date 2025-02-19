@@ -1,26 +1,54 @@
-#include <iostream> // Se incluye la librería correcta
+#include <iostream>
 
 using namespace std;
 
+// funcion para verificar si es numero primo
+bool esPrimo(int* num) {
+    if (*num < 2) return false;
+    for (int i = 2; i * i <= *num; i++) {
+        if (*num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main() {
-    // Definición del arreglo con valores correctos
-    int ArrNum[10] = {10, 20, 25, 30, 35, 40, 0, 0, 0, 0}; 
+    int num1, num2, num3; // Variables para los números
+    int *ptr1 = &num1, *ptr2 = &num2, *ptr3 = &num3; // Apuntadores a las variables
 
-    // Definición del puntero apuntando al primer elemento del arreglo
-    int* aptArrNum = ArrNum;
+    // Solicitar los números al usuario
+    cout << "Ingrese el primer numero: ";
+    cin >> *ptr1;
+    cout << "Ingrese el segundo numero: ";
+    cin >> *ptr2;
+    cout << "Ingrese el tercer numero: ";
+    cin >> *ptr3;
 
-    // Imprimir mensaje de prueba
-    cout << "Hola" << endl;
+    // comparar mayor y menor con sus direcciones
+    int* mayor = ptr1;
+    int* menor = ptr1;
 
-    // Acceder a los elementos del arreglo mediante el índice
-    cout << "El elemento en la posicion [0] es: " << ArrNum[0] << endl;
-    cout << "El elemento en la posicion [0] es: " << aptArrNum[0] << endl;
+    if (*ptr2 > *mayor) mayor = ptr2;
+    if (*ptr3 > *mayor) mayor = ptr3;
 
-    cout << "El elemento en la posicion [2] es: " << ArrNum[2] << endl;
-    cout << "El elemento en la posicion [2] es: " << aptArrNum[2] << endl;
+    if (*ptr2 < *menor) menor = ptr2;
+    if (*ptr3 < *menor) menor = ptr3;
 
-    // Mostrar la dirección de memoria del elemento en la posición [2]
-    cout << "La direccion de memoria de la posicion [2] es: " << &ArrNum[2] << endl;
-    cout << "La direccion de memoria de la posicion [2] es: " << &aptArrNum[2] << endl;
-    return 0; // Retorno exitoso del programa
+    // Imprimir el mayor y el menor 
+    cout << "\nEl mayor es: " << *mayor << " en la direccion de memoria: " << mayor << endl;
+    cout << "El menor es: " << *menor << " en la direccion de memoria: " << menor << endl;
+
+    // Verificar si cada número es primo con las direcciones
+    cout << "\nVerificando si los numeros son primos:\n";
+    cout << "El numero en la direccion " << ptr1 << " (" << *ptr1 << ") " 
+         << (esPrimo(ptr1) ? "es primo." : "NO es primo.") << endl;
+
+    cout << "El numero en la direccion " << ptr2 << " (" << *ptr2 << ") " 
+         << (esPrimo(ptr2) ? "es primo." : "NO es primo.") << endl;
+
+    cout << "El numero en la direccion " << ptr3 << " (" << *ptr3 << ") " 
+         << (esPrimo(ptr3) ? "es primo." : "NO es primo.") << endl;
+
+    return 0;
 }

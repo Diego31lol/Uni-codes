@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="input" onkeypress="crearComentarios(event)">
+        <input type="text" placeholder="Qué piensas?">
+    </div>
+    <div class="contenedor">
+
+    </div>
+
+    <script>
+        const contenedor = document.querySelector('.contenedor');
+        arr = [];
+
+        function crearComentarios(event){
+            if(event.key == "Enter" && event.target.value != ''){
+                const nuevoComentario={
+                    texto: event.target.value,
+                    likes: 0
+                }
+                arr.push(nuevoComentario);
+                event.target.value = '';
+                imprimir();
+            }
+        }
+
+        function imprimir(){
+            contenedor.innerHTML = '';
+            arr.forEach((element, i) => {
+                const caja = document.createElement('div');
+                const BotonL = document.createElement('button');
+                const BotonE = document.createElement('button');
+                cajaTxt.textContent = element.texto;
+                BotonL.textContent = 'likes: ' + element.likes;
+                BotonL.addEventListener('click', () => {
+                    element.likes++;
+                    BotonL.textContent = 'likes: ' + element.likes;
+                })
+                BotonE.textContent = 'Eliminar';
+                BotonE.addEventListener('click', () => {
+                    arr.splice(i, 1);
+                    imprimir();
+                })
+                caja.appendChild(BotonL);
+                caja.appendChild(BotonE);
+                contenedor.appendChild(caja);
+                });
+        }
+    </script>
+</body>
+</html>

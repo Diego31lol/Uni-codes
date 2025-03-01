@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="coloresStyle.css">
+    </head>
+    <body>
+
+        <div class="container"></div>
+
+        <script>
+            let arreglo = ["#33f0ff", "#3377ff", "#af33ff", "#ff33ff", "#df27a2"];
+            let contenedor = document.querySelector(".container");
+
+            for (let i = 0; i < 100; i++) {
+                let cuadrado = document.createElement("div");
+                cuadrado.classList.add("square");
+                contenedor.appendChild(cuadrado);
+
+                cuadrado.addEventListener("mouseover", function () {
+                    let num = Math.floor(Math.random() * arreglo.length);
+                    cuadrado.style.background = arreglo[num];
+                    cuadrado.addEventListener("mouseout",
+                        function(){
+                            cuadrado.style.backgroundColor = "transparent"
+                        }
+                    )
+                }
+            
+            );
+            }
+        </script>
+
+    </body>
+</html>

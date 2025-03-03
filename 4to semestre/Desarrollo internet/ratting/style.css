@@ -16,7 +16,7 @@ body {
   .app{
 	border: 2px black solid;
   }
-  .item img{
+  .item{
 	width: 100px;
 	height: auto;
 	padding: 15px;

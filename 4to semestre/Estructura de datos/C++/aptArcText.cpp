@@ -10,7 +10,7 @@ struct Data {
 };
 
 void ingresarDatos() {
-    ofstream archivo("datos.txt", ios::app); // Abrimos en modo append para no sobrescribir
+    ofstream archivo("datos.txt", ios::app); 
     if (!archivo) {
         cerr << "Error al abrir el archivo para escribir." << endl;
         return;

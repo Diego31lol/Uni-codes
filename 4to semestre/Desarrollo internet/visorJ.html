@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Definición del conjunto de caracteres utilizado en el documento -->
+    <meta charset="UTF-8">
+
+    <!-- Metaetiqueta que asegura que la página sea responsive y se ajuste bien en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página que aparecerá en la pestaña del navegador -->
+    <title>Visor de Trabajos</title>
+
+    <!-- Enlace a la hoja de estilo externa que contiene los estilos CSS para la página -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Enlace al archivo JavaScript externo que se cargará de forma diferida -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral desplazable que contiene los botones de navegación -->
+        <nav class="sidebar">
+            <div class="sidebar-content">
+                <!-- Botones que cargan diferentes páginas dentro del iframe -->
+                <!-- Cada botón tiene un evento onclick que llama a la función cargarPagina() pasando como parámetro la URL de la página -->
+                <button onclick="cargarPagina('calculadora/index.html')">Calculadora</button>
+                <button onclick="cargarPagina('colores/colores.html')">Colores</button>
+                <button onclick="cargarPagina('comentarios/index.html')">Comentarios</button>
+                <button onclick="cargarPagina('localstorage/index.html')">LocalStorage</button>
+                <button onclick="cargarPagina('miprimerjs/index.html')">MiPrimerJs</button>
+                <button onclick="cargarPagina('PaginaSObreMi/index.html')">PaginaSobreMi</button>
+                <button onclick="cargarPagina('practica1/Actividad2.html')">IntroduccionCss</button>
+                <button onclick="cargarPagina('practica2Gatos/index.html')">Botones</button>
+                <button onclick="cargarPagina('practica3/index.html')">EjemploHTML</button>
+                <button onclick="cargarPagina('ratting/index.html')">Rating</button>
+            </div>
+        </nav>
+
+        <!-- Contenedor del visor que alberga el iframe -->
+        <div class="visor-container">
+            <!-- Botones ubicados en la parte superior derecha del visor -->
+            <div class="top-buttons">
+                <!-- Botón para recargar el contenido del iframe -->
+                <button onclick="recargarIframe()">🔄 Recargar</button>
+
+                <!-- Botón que redirige al usuario al menú principal (Actividades.html) -->
+                <button onclick="window.location.href='Actividades.html'">🏠 Menú Principal</button>
+            </div>
+
+            <!-- iframe que sirve como visor de las páginas cargadas -->
+            <!-- El contenido de la página se carga inicialmente con el archivo calculadora/index.html -->
+            <iframe id="visor" src="calculadora/index.html"></iframe>
+        </div>
+    </div>
+</body>
+</html>

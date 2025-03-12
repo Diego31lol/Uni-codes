@@ -17,11 +17,12 @@ void mostrarLista(Nodo *);
 bool evitarDuplicados(Nodo *, int);
 int calcularSuma(Nodo *);
 double calcularPromedio(Nodo *);
+void eliminarElemento(Nodo *&, int);
 
 Nodo *head = NULL;
 
 int main() {
-    cout << MAGENTA << BG_YELLOW; // Aplica colores al texto si "colors.h" es válido
+    cout << MAGENTA << BG_YELLOW;
     menu();
     return 0;
 }
@@ -38,7 +39,8 @@ void menu() {
         cout << setw(5) << " " << "2. Mostrar lista\n";
         cout << setw(5) << " " << "3. Buscar un elemento en la lista\n";
         cout << setw(5) << " " << "4. Mostrar suma y promedio de la lista\n";
-        cout << setw(5) << " " << "5. Salir\n";
+        cout << setw(5) << " " << "5. Eliminar un elemento\n";
+        cout << setw(5) << " " << "6. Salir\n";
         cout << "====================================\n";
         cout << "Seleccione una opción: " << flush;
         cin >> opcion;
@@ -72,6 +74,11 @@ void menu() {
                 cout << "📌 Promedio de los elementos: " << calcularPromedio(head) << "\n";
                 break;
             case 5:
+                cout << "Ingrese el elemento a eliminar: ";
+                cin >> n;
+                eliminarElemento(head, n);
+                break;
+            case 6:
                 cout << "👋 Saliendo del programa... ¡Hasta luego!\n";
                 loop = false;
                 break;
@@ -81,7 +88,6 @@ void menu() {
     } while (loop);
 }
 
-// Función para insertar un nodo en la lista en orden ascendente
 void insertarLista(Nodo *&head, int n) {
     Nodo *new_nodo = new Nodo();
     new_nodo->data = n;
@@ -94,27 +100,25 @@ void insertarLista(Nodo *&head, int n) {
         tail = tail->next;
     }
 
-    if (aux == NULL) { // Insertar al inicio
+    if (aux == NULL) {
         new_nodo->next = head;
         head = new_nodo;
-    } else { // Insertar en medio o final
+    } else {
         aux->next = new_nodo;
         new_nodo->next = tail;
     }
 }
 
-// Función para mostrar los elementos de la lista
 void mostrarLista(Nodo *head) {
     Nodo *actual = head;
-    cout << "\n🔗 Elementos en la lista: ";
+    cout << "\n📌 Estructura de la lista:\n";
     while (actual != NULL) {
-        cout << actual->data << " -> ";
+        cout << "[" << actual->data << "|->";
         actual = actual->next;
     }
-    cout << "NULL\n";
+    cout << "NULL]" << endl;
 }
 
-// Función para verificar si un elemento ya está en la lista
 bool evitarDuplicados(Nodo *head, int n) {
     Nodo *actual = head;
     while (actual != NULL) {
@@ -126,7 +130,6 @@ bool evitarDuplicados(Nodo *head, int n) {
     return false;
 }
 
-// Función para calcular la suma de los elementos en la lista
 int calcularSuma(Nodo *head) {
     int suma = 0;
     Nodo *actual = head;
@@ -137,7 +140,6 @@ int calcularSuma(Nodo *head) {
     return suma;
 }
 
-// Función para calcular el promedio de los elementos en la lista
 double calcularPromedio(Nodo *head) {
     int suma = 0, contador = 0;
     Nodo *actual = head;
@@ -147,4 +149,33 @@ double calcularPromedio(Nodo *head) {
         actual = actual->next;
     }
     return (contador == 0) ? 0 : (double)suma / contador;
+}
+
+void eliminarElemento(Nodo *&head, int n) {
+    if (head == NULL) {
+        cout << "❌ La lista está vacía.\n";
+        return;
+    }
+
+    Nodo *actual = head;
+    Nodo *anterior = NULL;
+
+    while (actual != NULL && actual->data != n) {
+        anterior = actual;
+        actual = actual->next;
+    }
+
+    if (actual == NULL) {
+        cout << "❌ Elemento " << n << " no encontrado en la lista.\n";
+        return;
+    }
+
+    if (anterior == NULL) {
+        head = actual->next;
+    } else {
+        anterior->next = actual->next;
+    }
+
+    delete actual;
+    cout << "✅ Elemento " << n << " eliminado correctamente.\n";
 }

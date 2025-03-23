@@ -1,0 +1,92 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #f3e5f5;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Menús */
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #ffb6c1;
+}
+
+/* Encabezado del juego */
+#game-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 0 5px #ffb6c1;
+}
+
+/* Botones */
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: #ffb6c1;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    width: 150px; /* Hacer el botón más grande */
+    text-align: center;
+}
+
+button:hover {
+    background-color: #ff8a80;
+}
+
+
+/* Iconos */
+.icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+/* Evitar que los iconos aparezcan en el scoreboard */
+
+#icon-container {
+    position: absolute;
+    top: 100px;  /* Antes: 50px. Ahora aumenta para dejar más espacio */
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Game Over Menu */
+#game-over-menu {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff6666;
+}

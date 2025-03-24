@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-   
+    const enterButton = document.getElementById("enterButton");
     const portada = document.querySelector(".portada");
     const container = document.querySelector(".container");
 

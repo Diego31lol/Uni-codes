@@ -45,7 +45,7 @@
     animation: fadeIn 1.5s ease-in-out;
 }
 
-.enterButton {
+#enterButton {
     margin-top: 20px;
     padding: 15px 30px;
     font-size: 1.2rem;
@@ -58,7 +58,7 @@
     animation: fadeIn 2s ease-in-out;
 }
 
-.enterButton:hover {
+#enterButton:hover {
     background: #c0392b;
     transform: scale(1.05);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);

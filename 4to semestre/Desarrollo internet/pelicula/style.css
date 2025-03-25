@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: #1b8fa3;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color:   #1b8fa3;;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color:  #1b8fa3;;
+}
+
+.movies-container {
+    margin-top: 20px;
+}
+
+.movie {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    text-align: left;
+}
+
+.movie h3 {
+    margin: 0;
+    color: #333;
+}
+
+.movie p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.movie button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.movie button:hover {
+    background-color: #c82333;
+}
+#bBuscador {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1b8fa3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

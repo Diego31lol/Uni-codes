@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int sumar(int a, int b) {
+    return a + b;
+}
+
+void intercambiar(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int num1, num2;
+    cout << "Ingresa el primer numero: ";
+    cin >> num1;
+    cout << "Ingresa el segundo numero: ";
+    cin >> num2;
+
+    cout << "La suma es: " << sumar(num1, num2) << endl;
+
+    intercambiar(num1, num2);
+    cout << "Valores intercambiados: num1 = " << num1 << ", num2 = " << num2 << endl;
+
+    return 0;
+}

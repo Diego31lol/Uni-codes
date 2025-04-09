@@ -18,6 +18,7 @@ bool evitarDuplicados(Nodo *, int);
 int calcularSuma(Nodo *);
 double calcularPromedio(Nodo *);
 void eliminarElemento(Nodo *&, int);
+void vaciarLista(Nodo *&);
 
 Nodo *head = NULL;
 
@@ -40,7 +41,8 @@ void menu() {
         cout << setw(5) << " " << "3. Buscar un elemento en la lista\n";
         cout << setw(5) << " " << "4. Mostrar suma y promedio de la lista\n";
         cout << setw(5) << " " << "5. Eliminar un elemento\n";
-        cout << setw(5) << " " << "6. Salir\n";
+        cout << setw(5) << " " << "6. Vaciar la lista completa\n";
+        cout << setw(5) << " " << "7. Salir\n";
         cout << "====================================\n";
         cout << "Seleccione una opción: " << flush;
         cin >> opcion;
@@ -79,11 +81,15 @@ void menu() {
                 eliminarElemento(head, n);
                 break;
             case 6:
+                vaciarLista(head);
+                cout << "✅ La lista ha sido vaciada completamente.\n";
+                break;
+            case 7:
                 cout << "👋 Saliendo del programa... ¡Hasta luego!\n";
                 loop = false;
                 break;
             default:
-                cout << "⚠️ Opción no válida, intente de nuevo.\n";
+                cout << "⚠️ Opcion no valida, intente de nuevo.\n";
         }
     } while (loop);
 }
@@ -178,4 +184,14 @@ void eliminarElemento(Nodo *&head, int n) {
 
     delete actual;
     cout << "✅ Elemento " << n << " eliminado correctamente.\n";
+}
+
+void vaciarLista(Nodo *&head) {
+    Nodo *actual = head;
+    while (actual != NULL) {
+        Nodo *temp = actual;
+        actual = actual->next;
+        delete temp;
+    }
+    head = NULL;
 }

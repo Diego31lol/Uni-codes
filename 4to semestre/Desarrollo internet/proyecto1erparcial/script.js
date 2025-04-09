@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //variables del DOM
 const startMenu = document.getElementById('start-menu');
 const optionsMenu = document.getElementById('options-menu');
@@ -5,23 +6,35 @@ const gameContainer = document.getElementById('game-container');
 const pauseMenu = document.getElementById('pause-menu');
 const gameOverMenu = document.getElementById('game-over-menu');
 const iconContainer = document.getElementById('icon-container');
+=======
+// elementos del menu y del juego
+const menuInicio = document.getElementById('start-menu');
+const menuOpciones = document.getElementById('options-menu');
+const contenedorJuego = document.getElementById('game-container');
+const menuPausa = document.getElementById('pause-menu');
+const menuJuegoTerminado = document.getElementById('game-over-menu');
+const contenedorIconos = document.getElementById('icon-container');
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
 
-const startBtn = document.getElementById('start-btn');
-const optionsBtn = document.getElementById('options-btn');
-const backToMenuBtn = document.getElementById('back-to-menu');
-const resumeBtn = document.getElementById('resume-btn');
-const backToMainBtn = document.getElementById('back-to-main');
-const mainMenuBtn = document.getElementById('main-menu-btn');
-const pauseBtn = document.getElementById('pause-btn');
-const restartButton = document.getElementById('restart-btn');
+// botones del menu y controles del juego
+const botonInicio = document.getElementById('start-btn');
+const botonOpciones = document.getElementById('options-btn');
+const botonVolverMenu = document.getElementById('back-to-menu');
+const botonReanudar = document.getElementById('resume-btn');
+const botonVolverMenuPrincipal = document.getElementById('back-to-main');
+const botonMenuPrincipal = document.getElementById('main-menu-btn');
+const botonPausa = document.getElementById('pause-btn');
+const botonReiniciar = document.getElementById('restart-btn');
 
-const scoreText = document.getElementById('score');
-const levelText = document.getElementById('level');
-const livesText = document.getElementById('lives');
-const clickSound = document.getElementById('click-sound');
-const soundToggle = document.getElementById('sound-toggle');
-const difficultySelect = document.getElementById('difficulty-select');
+// elementos de informacion en pantalla
+const textoPuntaje = document.getElementById('score');
+const textoNivel = document.getElementById('level');
+const textoVidas = document.getElementById('lives');
+const sonidoClic = document.getElementById('click-sound');
+const toggleSonido = document.getElementById('sound-toggle');
+const seleccionDificultad = document.getElementById('difficulty-select');
 
+<<<<<<< HEAD
 //creo mis variables
 let score = 0;
 let level = 1;
@@ -38,30 +51,66 @@ let iconInterval;
 
 //mis imagenes
 const allIcons = [
+
+// variables del juego
+let puntaje = 0;
+let nivel = 1;
+let vidas = 3;
+let juegoActivo = false;
+let juegoPausado = false;
+let cantidadIconos = 0;
+let maximoIconos = 10;
+let velocidadAparicion = 400;
+let probabilidadGato = 0.2;
+let iconosEnPantalla = [];
+let clicsGatosMalos = 0;
+let intervaloIconos;
+
+// imagenes de iconos del juego
+const todosLosIconos = [
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
     'img/feliz.png',
     'img/gatito.png',
     'img/gato.png'
 ];
 
+<<<<<<< HEAD
 function createIcon() {
     if (!gameActive || gamePaused) return; //es si el juego no está activo o está pausado
 
     const icon = document.createElement('div'); //se crea un div
     icon.classList.add('icon'); //clase
+=======
+// funcion para crear un nuevo icono en pantalla
+function crearIcono() {
+    if (!juegoActivo || juegoPausado) return;
 
-    let isBadCat = Math.random() < catProbability;
-    let iconSrc = isBadCat ? 'img/gato.png' : allIcons[Math.floor(Math.random() * 2)];
-    icon.style.backgroundImage = `url(${iconSrc})`;
+    const icono = document.createElement('div');
+    icono.classList.add('icon');
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
 
+    let esGatoMalo = Math.random() < probabilidadGato;
+    let iconoSrc = esGatoMalo ? 'img/gato.png' : todosLosIconos[Math.floor(Math.random() * 2)];
+    icono.style.backgroundImage = `url(${iconoSrc})`;
+
+<<<<<<< HEAD
     let maxWidth = window.innerWidth - 120;
     let maxHeight = window.innerHeight - 250; // Ajustado para evitar que salgan fuera de la pantalla
     //se le asignan posiciones aa los elementos, o a los gatitos
     icon.style.left = `${60 + Math.random() * maxWidth}px`;//eje x
     icon.style.top = `${120 + Math.random() * maxHeight}px`;//asignación eje y
+=======
+    // posicion aleatoria en la pantalla
+    let maxAncho = window.innerWidth - 120;
+    let maxAlto = window.innerHeight - 250;
+    icono.style.left = `${60 + Math.random() * maxAncho}px`;
+    icono.style.top = `${120 + Math.random() * maxAlto}px`;
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
 
-    iconContainer.appendChild(icon);
-    iconsOnScreen.push({ element: icon, isBadCat });
+    contenedorIconos.appendChild(icono);
+    iconosEnPantalla.push({ element: icono, esGatoMalo });
 
+<<<<<<< HEAD
     //contador aumenta si no es gato pierdepuntos
     if (!isBadCat) {
         iconCount++;
@@ -90,34 +139,66 @@ function createIcon() {
         } else {
             // Recompensa por clic en gato bueno
             score += 15; //15 puntos de aumento
+=======
+    if (!esGatoMalo) {
+        cantidadIconos++;
+    }
+
+    // si hay mas de 10 gatos buenos en pantalla, se pierde
+    let gatosBuenosEnPantalla = iconosEnPantalla.filter(i => !i.esGatoMalo).length;
+    if (gatosBuenosEnPantalla > 10) {
+        finDelJuego();
+        return;
+    }
+
+    // evento de clic en icono
+    icono.addEventListener('click', () => {
+        if (esGatoMalo) {
+            clicsGatosMalos++;
+            puntaje -= 10;
+            vidas--;
+            textoVidas.textContent = vidas;
+            if (clicsGatosMalos >= 3 || vidas <= 0) {
+                finDelJuego();
+                return;
+            }
+        } else {
+            puntaje += 15;
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
         }
 
-        icon.remove();
-        iconsOnScreen = iconsOnScreen.filter(i => i.element !== icon);
-        if (!isBadCat) {
-            iconCount--;
+        icono.remove();
+        iconosEnPantalla = iconosEnPantalla.filter(i => i.element !== icono);
+        if (!esGatoMalo) {
+            cantidadIconos--;
         }
 
-        scoreText.textContent = score;
-        if (soundToggle.checked) clickSound.play();
+        textoPuntaje.textContent = puntaje;
+        if (toggleSonido.checked) sonidoClic.play();
 
+<<<<<<< HEAD
         //si los puntos son modulares de 100 a 0, se aumenta la dificultad por defecto
         if (score % 100 === 0 && score > 0) {
             increaseDifficulty();
+=======
+        if (puntaje % 100 === 0 && puntaje > 0) {
+            aumentarDificultad();
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
         }
     });
 
-    // Los gatos malos desaparecen en 5 segundos si no se clickean
-    if (isBadCat) {
+    // los gatos malos desaparecen en 5 segundos si no se clickean
+    if (esGatoMalo) {
         setTimeout(() => {
-            if (icon.parentNode && !gamePaused) {
-                icon.remove();
-                iconsOnScreen = iconsOnScreen.filter(i => i.element !== icon);
+            if (icono.parentNode && !juegoPausado) {
+                icono.remove();
+                iconosEnPantalla = iconosEnPantalla.filter(i => i.element !== icono);
             }
         }, 5000);
     }
 }
 
+<<<<<<< HEAD
 //se inicia el juego
 function startGame() {
     //se esconde lo innecese¿ario
@@ -147,61 +228,108 @@ function startGame() {
         maxIcons = 8;
         spawnSpeed = 500;
         catProbability = 0.15;
+=======
+// funcion para iniciar el juego
+function comenzarJuego() {
+    menuInicio.classList.add('hidden');
+    contenedorJuego.classList.remove('hidden');
+    menuJuegoTerminado.classList.add('hidden');
+    menuPausa.classList.add('hidden');
+    juegoActivo = true;
+    juegoPausado = false;
+    cantidadIconos = 0;
+    clicsGatosMalos = 0;
+    puntaje = 0;
+    nivel = 1;
+    vidas = 3;
+    contenedorIconos.innerHTML = '';
+    iconosEnPantalla = [];
+
+    // ajustar dificultad segun la seleccion
+    let dificultad = seleccionDificultad.value;
+    if (dificultad === 'easy') {
+        maximoIconos = 5;
+        velocidadAparicion = 700;
+        probabilidadGato = 0.1;
+    } else if (dificultad === 'medium') {
+        maximoIconos = 8;
+        velocidadAparicion = 500;
+        probabilidadGato = 0.15;
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
     } else {
-        maxIcons = 10;
-        spawnSpeed = 400;
-        catProbability = 0.2;
+        maximoIconos = 10;
+        velocidadAparicion = 400;
+        probabilidadGato = 0.2;
     }
 
-    scoreText.textContent = score;
-    levelText.textContent = level;
-    livesText.textContent = lives;
+    textoPuntaje.textContent = puntaje;
+    textoNivel.textContent = nivel;
+    textoVidas.textContent = vidas;
 
-    clearInterval(iconInterval);
-    iconInterval = setInterval(createIcon, spawnSpeed);
+    clearInterval(intervaloIconos);
+    intervaloIconos = setInterval(crearIcono, velocidadAparicion);
 }
 
+<<<<<<< HEAD
 //funcion de aumento de dificultad
 function increaseDifficulty() {
     level++;
     levelText.textContent = level;
+=======
+// funcion para aumentar la dificultad con el tiempo
+function aumentarDificultad() {
+    nivel++;
+    textoNivel.textContent = nivel;
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
 
-    spawnSpeed = Math.max(100, spawnSpeed - 50);
-    maxIcons += 3;
-    catProbability = Math.min(0.6, catProbability + 0.1);
+    velocidadAparicion = Math.max(100, velocidadAparicion - 50);
+    maximoIconos += 3;
+    probabilidadGato = Math.min(0.6, probabilidadGato + 0.1);
 
-    clearInterval(iconInterval);
-    iconInterval = setInterval(createIcon, spawnSpeed);
+    clearInterval(intervaloIconos);
+    intervaloIconos = setInterval(crearIcono, velocidadAparicion);
 }
 
+<<<<<<< HEAD
 //se manda a llamar la pausa si se presiona el boton
 function pauseGame() {
     gamePaused = true;
     pauseMenu.classList.remove('hidden');
     clearInterval(iconInterval);
+=======
+// funcion para pausar el juego
+function pausarJuego() {
+    juegoPausado = true;
+    menuPausa.classList.remove('hidden');
+    clearInterval(intervaloIconos);
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
 }
 
-function resumeGame() {
-    gamePaused = false;
-    pauseMenu.classList.add('hidden');
-    iconInterval = setInterval(createIcon, spawnSpeed);
+// funcion para reanudar el juego
+function reanudarJuego() {
+    juegoPausado = false;
+    menuPausa.classList.add('hidden');
+    intervaloIconos = setInterval(crearIcono, velocidadAparicion);
 }
 
-function returnToMainMenu() {
-    gameActive = false;
-    gamePaused = false;
-    clearInterval(iconInterval);
-    gameContainer.classList.add('hidden');
-    pauseMenu.classList.add('hidden');
-    startMenu.classList.remove('hidden');
+// funcion para volver al menu principal
+function volverAlMenuPrincipal() {
+    juegoActivo = false;
+    juegoPausado = false;
+    clearInterval(intervaloIconos);
+    contenedorJuego.classList.add('hidden');
+    menuPausa.classList.add('hidden');
+    menuInicio.classList.remove('hidden');
 }
 
-function gameOver() {
-    gameActive = false;
-    gameOverMenu.classList.remove('hidden');
-    clearInterval(iconInterval);
+// funcion para terminar el juego cuando se pierde
+function finDelJuego() {
+    juegoActivo = false;
+    menuJuegoTerminado.classList.remove('hidden');
+    clearInterval(intervaloIconos);
 }
 
+<<<<<<< HEAD
 //aqui estan loss botones 
 startBtn.addEventListener('click', startGame);
 pauseBtn.addEventListener('click', pauseGame);
@@ -212,8 +340,20 @@ backToMainBtn.addEventListener('click', returnToMainMenu);
 optionsBtn.addEventListener('click', () => {
     startMenu.classList.add('hidden');
     optionsMenu.classList.remove('hidden');
+=======
+// eventos de los botones
+botonInicio.addEventListener('click', comenzarJuego);
+botonPausa.addEventListener('click', pausarJuego);
+botonReanudar.addEventListener('click', reanudarJuego);
+botonReiniciar.addEventListener('click', comenzarJuego);
+botonMenuPrincipal.addEventListener('click', volverAlMenuPrincipal);
+botonVolverMenuPrincipal.addEventListener('click', volverAlMenuPrincipal);
+botonOpciones.addEventListener('click', () => {
+    menuInicio.classList.add('hidden');
+    menuOpciones.classList.remove('hidden');
+>>>>>>> 17d6ab7f34660e248ec240c132dbae56acd6a1c4
 });
-backToMenuBtn.addEventListener('click', () => {
-    optionsMenu.classList.add('hidden');
-    startMenu.classList.remove('hidden');
+botonVolverMenu.addEventListener('click', () => {
+    menuOpciones.classList.add('hidden');
+    menuInicio.classList.remove('hidden');
 });

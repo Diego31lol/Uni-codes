@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Iconos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menú de Inicio -->
+    <div id="start-menu" class="menu">
+        <h1>¡Bienvenido al Juego de Iconos!</h1>
+        <button id="start-btn">Jugar</button>
+        <button id="options-btn">Opciones</button>
+    </div>
+
+    <!-- Opciones -->
+    <div id="options-menu" class="menu hidden">
+        <h2>Opciones</h2>
+        <label>
+    Sonido: <input type="checkbox" id="sound-toggle" checked>
+        </label>
+        <label>
+            Dificultad:
+            <select id="difficulty-select">
+                <option value="easy">Fácil</option>
+                <option value="medium" selected>Medio</option>
+                <option value="hard">Difícil</option>
+            </select>
+        </label>
+        <button id="back-to-menu">Volver</button>
+    </div>
+
+    <!-- Juego -->
+    <div id="game-container" class="hidden">
+        <div id="game-header">
+            <h2>Nivel <span id="level">1</span></h2>
+            <p>Puntuación: <span id="score">0</span></p>
+            <p>Vidas: <span id="lives">3</span></p>
+            <button id="pause-btn">Pausa</button>
+        </div>
+        <div id="icon-container"></div>
+
+        <!-- Menú de Game Over -->
+        <div id="game-over-menu" class="hidden">
+            <h2>¡Juego Terminado!</h2>
+            <button id="restart-btn">Reiniciar</button>
+            <button id="main-menu-btn">Menú Principal</button>
+        </div>
+    </div>
+
+    <!-- Menú de Pausa -->
+    <div id="pause-menu" class="menu hidden">
+        <h2>Juego en Pausa</h2>
+        <button id="resume-btn">Continuar</button>
+        <button id="back-to-main">Menú Principal</button>
+    </div>
+
+    <audio id="click-sound" src="#"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

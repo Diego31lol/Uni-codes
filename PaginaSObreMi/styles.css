@@ -1,0 +1,189 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #BCA9C3;
+}
+
+/* Primer div: Encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #BCA9C3;
+}
+
+.left-section {
+    position: relative;
+    width: 50%;
+}
+
+.square-bottom {
+    width: 370px;
+    height: 150px;
+    background-color:#304F84;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.square-top {
+    width: 350px;
+    height: 130px;
+    background-color: #705497;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.credential-photo {
+    width: 100px;
+    height: 140px;
+    border-radius: 45%;
+    margin-right: 10px;
+}
+
+.credential-text {
+    font-size: 20px;
+   
+}
+
+.right-section {
+    width: 40%;
+}
+
+.square-right {
+    width: 350px;
+    height: 150px;
+    background-color: #304f8496;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 25px;
+   
+}
+
+/* Segundo div: Texto y enlaces (centrado) */
+.text-section {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2a7fb8;
+    text-align: center;
+    border-radius: 60px;
+}
+
+.text-section p {
+    margin: 0 0 10px 0;
+    background-color: #2A7FB8;
+}
+
+.text-section a {
+    margin: 0 10px;
+    color: #1a1aca;
+    text-decoration: none;
+    background-color: #2A7FB8;
+}
+
+.text-section a:hover {
+    text-decoration: underline;
+}
+
+/* Tercer div: Cuadrados redondeados */
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #BCA9C3;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:nth-child(1) { background-color: #705497; }
+.card:nth-child(2) { background-color: #4570C1; }
+.card:nth-child(3) { background-color:#934CBD; }
+.card:nth-child(4) { background-color: #4570C1; }
+.card:nth-child(5) { background-color: #705497; }
+
+.card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.card p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    left: 90px;
+    white-space: nowrap;
+}
+
+.card:hover {
+    width: 200px;
+    height: 80px;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.card:hover p {
+    opacity: 1;
+}
+/* Contenedor del contenido dinámico */
+.dynamic-content {
+    display: none;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #70549746;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+/*.dynamic-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}*/
+.guia{
+    width: 500px;
+    height: 50px;
+    margin: 5px auto;
+    padding: 1px 1px 10px 1px;
+    background-color:#304f8496;
+    text-align: center;
+    border-radius: 50px;
+}
+.guia p{
+    font-size: 20px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de Página</title>
+</head>
+<body>
+    <!-- Primer Div: Lorem x5 -->
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+    <!-- Segundo Div: Imagen y Botón Submit -->
+    <div>
+        <img src="imagen.jpg" alt="Descripción de la imagen" style="width:200px;height:auto;">
+        <br>
+        <form action="paginaResultado.php" method="post">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <!-- Tercer Div: Select, Nombre y Apellido -->
+    <div>
+        <form action="paginaResultado.php" method="post">
+            <label for="opciones">Seleccione una opción:</label>
+            <select id="opciones" name="opciones">
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+            </select>
+            <br><br>
+            <label for="nombre">Nombre:</label>
+            <input type="" id="nombre" name="nombre" value="Texto fijo de ejemplo">
+            <br><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" value="Texto fijo de ejemplo">
+            <br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+    <!-- Cuarto Div: Tabla con Horario -->
+    <div>
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+            <tr>
+                <th>Hora</th>
+                <th>Actividad</th>
+            </tr>
+            <tr>
+                <td>08:00 - 09:00</td>
+                <td>Clase de Matemáticas</td>
+            </tr>
+            <tr>
+                <td>09:00 - 10:00</td>
+                <td>Clase de Historia</td>
+            </tr>
+            <tr>
+                <td>10:00 - 11:00</td>
+                <td>Receso</td>
+            </tr>
+            <tr>
+                <td>11:00 - 12:00</td>
+                <td>Clase de Ciencias</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

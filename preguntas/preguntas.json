@@ -1,0 +1,102 @@
+[
+    {
+        "pregunta": "¿Cuál es la capital de México?",
+        "opciones": ["Monterrey", "Guadalajara", "Ciudad de México", "Puebla"],
+        "respuesta": "Ciudad de México"
+    },
+    {
+        "pregunta": "¿Qué civilización construyó la ciudad de Chichén Itzá?",
+        "opciones": ["Azteca", "Maya", "Olmeca", "Zapoteca"],
+        "respuesta": "Maya"
+    },
+    {
+        "pregunta": "¿En qué año comenzó la Independencia de México?",
+        "opciones": ["1810", "1821", "1857", "1910"],
+        "respuesta": "1810"
+    },
+    {
+        "pregunta": "¿Quién fue el líder del Ejército Insurgente en la Independencia de México?",
+        "opciones": ["Benito Juárez", "Porfirio Díaz", "Miguel Hidalgo", "Pancho Villa"],
+        "respuesta": "Miguel Hidalgo"
+    },
+    {
+        "pregunta": "¿Cuál es la moneda oficial de México?",
+        "opciones": ["Peso mexicano", "Dólar", "Euro", "Sol"],
+        "respuesta": "Peso mexicano"
+    },
+    {
+        "pregunta": "¿Qué artista mexicano pintó el famoso mural 'Sueño de una tarde dominical en la Alameda Central'?",
+        "opciones": ["Frida Kahlo", "José Clemente Orozco", "Diego Rivera", "David Alfaro Siqueiros"],
+        "respuesta": "Diego Rivera"
+    },
+    {
+        "pregunta": "¿Qué océanos rodean a México?",
+        "opciones": ["Pacífico y Atlántico", "Índico y Pacífico", "Ártico y Atlántico", "Atlántico y Índico"],
+        "respuesta": "Pacífico y Atlántico"
+    },
+    {
+        "pregunta": "¿En qué estado se encuentra la ciudad de Teotihuacán?",
+        "opciones": ["Puebla", "Estado de México", "Hidalgo", "Oaxaca"],
+        "respuesta": "Estado de México"
+    },
+    {
+        "pregunta": "¿Cuál es el nombre del plato típico mexicano hecho con masa y relleno de carne o frijoles?",
+        "opciones": ["Tamal", "Tostada", "Enchilada", "Gordita"],
+        "respuesta": "Tamal"
+    },
+    {
+        "pregunta": "¿Cómo se llama la celebración tradicional mexicana en honor a los muertos?",
+        "opciones": ["Navidad", "Día de Muertos", "Grito de Independencia", "Semana Santa"],
+        "respuesta": "Día de Muertos"
+    },
+    {
+        "pregunta": "¿Cuál es el nombre del volcán más alto de México?",
+        "opciones": ["Popocatépetl", "Iztaccíhuatl", "Nevado de Toluca", "Pico de Orizaba"],
+        "respuesta": "Pico de Orizaba"
+    },
+    {
+        "pregunta": "¿Qué flor es tradicionalmente usada en el Día de Muertos?",
+        "opciones": ["Rosa", "Cempasúchil", "Lirio", "Margarita"],
+        "respuesta": "Cempasúchil"
+    },
+    {
+        "pregunta": "¿Cuál es el nombre del héroe revolucionario conocido como 'El Caudillo del Sur'?",
+        "opciones": ["Emiliano Zapata", "Francisco I. Madero", "Venustiano Carranza", "Pancho Villa"],
+        "respuesta": "Emiliano Zapata"
+    },
+    {
+        "pregunta": "¿En qué estado se encuentran las Grutas de Cacahuamilpa?",
+        "opciones": ["Guerrero", "Chiapas", "Veracruz", "Querétaro"],
+        "respuesta": "Guerrero"
+    },
+    {
+        "pregunta": "¿Qué mar limita al sureste de México?",
+        "opciones": ["Mar Caribe", "Océano Atlántico", "Océano Índico", "Mar Mediterráneo"],
+        "respuesta": "Mar Caribe"
+    },
+    {
+        "pregunta": "¿Quién escribió 'El laberinto de la soledad'?",
+        "opciones": ["Carlos Fuentes", "Juan Rulfo", "Octavio Paz", "Sor Juana Inés de la Cruz"],
+        "respuesta": "Octavio Paz"
+    },
+    {
+        "pregunta": "¿Qué significa 'Xoloitzcuintle' en náhuatl?",
+        "opciones": ["Perro sin pelo", "Lobo sagrado", "Perro del dios Xólotl", "Guardián de los muertos"],
+        "respuesta": "Perro del dios Xólotl"
+    },
+    {
+        "pregunta": "¿En qué año México fue sede de los Juegos Olímpicos?",
+        "opciones": ["1968", "1970", "1986", "1992"],
+        "respuesta": "1968"
+    },
+    {
+        "pregunta": "¿Qué bebida tradicional mexicana se elabora a partir del agave?",
+        "opciones": ["Pulque", "Mezcal", "Tequila", "Todas las anteriores"],
+        "respuesta": "Todas las anteriores"
+    },
+    {
+        "pregunta": "¿Cómo se llama el famoso mercado de artesanías en la Ciudad de México?",
+        "opciones": ["Mercado de Coyoacán", "La Lagunilla", "Mercado de San Juan", "La Ciudadela"],
+        "respuesta": "La Ciudadela"
+    }
+]

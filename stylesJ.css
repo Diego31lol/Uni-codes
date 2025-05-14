@@ -1,0 +1,169 @@
+/* Estilos generales */
+* {
+    margin: 0; /* Elimina los márgenes predeterminados de los elementos */
+    padding: 0; /* Elimina los rellenos predeterminados de los elementos */
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el tamaño total de los elementos */
+    font-family: 'Poppins', Arial, sans-serif; /* Define la tipografía principal para todo el documento */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex; /* Usa Flexbox para organizar los elementos dentro del contenedor */
+    height: 100vh; /* Hace que el contenedor ocupe el 100% de la altura de la ventana */
+}
+
+/* ------ Portada ------ */
+.portada {
+    width: 100%; /* El ancho de la portada será el 100% */
+    height: 100vh; /* La altura de la portada ocupará toda la altura de la ventana */
+    background: linear-gradient(135deg, #5282b3, #1abc9c); /* Fondo con un gradiente diagonal */
+    display: flex; /* Usa Flexbox para alinear los elementos dentro de la portada */
+    align-items: center; /* Centra los elementos en el eje vertical */
+    justify-content: center; /* Centra los elementos en el eje horizontal */
+    text-align: center; /* Centra el texto horizontalmente */
+    color: rgba(238, 232, 232, 0.9); /* Color del texto con opacidad para mayor contraste */
+    flex-direction: column; /* Organiza los elementos hijos en una columna */
+    animation: fadeIn 1.5s ease-in-out; /* Aplica la animación de desvanecimiento al cargar la página */
+}
+
+.portada h1 {
+    font-size: 3.5rem; /* Tamaño grande para el título principal */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Añade sombra al texto para mejor visibilidad */
+    animation: slideDown 1s ease-in-out; /* Animación de deslizamiento desde arriba */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.portada h2 {
+    font-size: 2rem; /* Tamaño para el subtítulo */
+    margin-bottom: 20px; /* Espacio debajo del subtítulo */
+}
+
+.portada p {
+    font-size: 1.5rem; /* Tamaño de texto para la descripción */
+    margin-top: 10px; /* Espacio arriba del párrafo */
+    opacity: 0.85; /* Opacidad ajustada para dar un efecto suave */
+    animation: fadeIn 1.5s ease-in-out; /* Aplica la animación de desvanecimiento */
+}
+
+.enterButton {
+    margin-top: 20px; /* Espacio encima del botón */
+    padding: 15px 30px; /* Relleno interno del botón */
+    font-size: 1.2rem; /* Tamaño del texto del botón */
+    border: none; /* Elimina el borde predeterminado */
+    background: #e74c3c; /* Fondo rojo para el botón */
+    color: white; /* Color blanco para el texto del botón */
+    cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa por encima */
+    border-radius: 30px; /* Bordes redondeados para un diseño más moderno */
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transición suave para el cambio de fondo, escala y sombra */
+    animation: fadeIn 2s ease-in-out; /* Aplica la animación de desvanecimiento */
+}
+
+.enterButton:hover {
+    background: #c0392b; /* Cambia el fondo a un tono más oscuro cuando se pasa por encima */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Añade sombra al pasar el ratón */
+}
+
+/* ------ Barra lateral desplazable ------ */
+.sidebar {
+    width: 250px; /* Establece el ancho de la barra lateral */
+    background: #4d759c; /* Color de fondo de la barra lateral */
+    color: white; /* Color blanco para el texto */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura */
+    padding: 15px; /* Relleno interno */
+    height: 100vh; /* La barra lateral ocupará toda la altura de la ventana */
+    position: fixed; /* Fija la barra lateral en el lado izquierdo de la pantalla */
+    left: 0; /* Alinea la barra lateral al borde izquierdo */
+    top: 0; /* Alinea la barra lateral al borde superior */
+    border-right: 2px solid #2c3e50; /* Borde derecho para separar la barra lateral del contenido */
+}
+
+.sidebar-content {
+    display: flex; /* Usa Flexbox para organizar los elementos dentro de la barra lateral */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    gap: 15px; /* Espacio entre los elementos */
+}
+
+/* Botones de la barra lateral */
+.sidebar button {
+    background: #4d759c; /* Fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Elimina el borde */
+    padding: 12px; /* Relleno interno */
+    text-align: left; /* Alinea el texto a la izquierda */
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    cursor: pointer; /* Cambia el cursor a un puntero */
+    transition: background 0.3s, transform 0.2s, padding 0.2s; /* Transiciones suaves */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.sidebar button:hover {
+    background: #1abc9c; /* Cambia el color de fondo cuando se pasa por encima */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    padding: 12px 15px; /* Aumenta el relleno lateral cuando se pasa por encima */
+}
+
+/* ------ Contenedor del visor ------ */
+.visor-container {
+    margin-left: 260px; /* Deja espacio para la barra lateral */
+    flex-grow: 1; /* El contenedor se expandirá para llenar el espacio disponible */
+    display: flex; /* Usa Flexbox para organizar los elementos dentro del visor */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center; /* Centra los elementos en el eje horizontal */
+    justify-content: center; /* Centra los elementos en el eje vertical */
+    padding: 20px; /* Relleno interno */
+    height: 100vh; /* El visor ocupa toda la altura de la ventana */
+    position: relative; /* Necesario para la posición absoluta de los botones */
+}
+
+/* Botones de arriba */
+.top-buttons {
+    position: absolute; /* Posiciona los botones en una ubicación específica */
+    top: 10px; /* Espacio desde la parte superior */
+    right: 20px; /* Espacio desde la parte derecha */
+    display: flex; /* Usa Flexbox para organizar los botones */
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.top-buttons button {
+    background: #e74c3c; /* Fondo rojo para los botones */
+    color: white; /* Texto blanco */
+    border: none; /* Elimina el borde predeterminado */
+    padding: 10px 20px; /* Relleno interno */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-weight: bold; /* Pone el texto en negritas */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.top-buttons button:hover {
+    background: #c0392b; /* Cambia el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Aumenta el tamaño del botón */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+}
+
+/* Estilos para el iframe */
+iframe {
+    width: 100%; /* El iframe ocupará todo el ancho disponible */
+    height: 90%; /* El iframe ocupará el 90% de la altura del contenedor */
+    border: none; /* Elimina el borde */
+    background: white; /* Fondo blanco */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del iframe */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out; /* Transición suave para el efecto de zoom */
+}
+
+iframe:hover {
+    transform: scale(1.02); /* Añade un pequeño efecto de zoom al pasar el ratón */
+}
+
+/* ------ Animaciones ------ */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Comienza con opacidad 0 */
+    to { opacity: 1; } /* Finaliza con opacidad 1 */
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; } /* Comienza desplazado hacia arriba y opaco */
+    to { transform: translateY(0); opacity: 1; } /* Finaliza en su posición original y opaco */
+}

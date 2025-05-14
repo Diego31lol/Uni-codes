@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Buscador</title>
+    <meta charset="UTF-8">
+    <title>Buscador</title>
     <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
     <div class="container">
         <h1>Buscador</h1>
         
         <div class="formulario">
-           
-            <input type="text" id="IntBuscador" placeholder="Nombre de la pelicula" required>
-           
+            <input type="text" id="IntBuscador" placeholder="Nombre de la película" required>
             <button id="botonBuscar">Buscar</button>
         </div>
 
-       
-    
-    
+        <div id="resultados"></div>
     </div>
-    <script src="main.js"></script>
+
+    <script>
+        document.getElementById("botonBuscar").addEventListener("click", function () {
+            let nombrePeli = document.getElementById("IntBuscador").value.toLowerCase();
+            let movies = localStorage.getItem("movies");
+            let moviesArray = movies ? JSON.parse(movies) : [];
+
+            let resultados = moviesArray.filter(peli =>
+                peli.title.toLowerCase().includes(nombrePeli)
+            );
+
+            let resultadosDiv = document.getElementById("resultados");
+            resultadosDiv.innerHTML = "";
+
+            if (resultados.length === 0) {
+                resultadosDiv.innerHTML = "<p>No se encontraron coincidencias.</p>";
+            } else {
+                resultados.forEach(peli => {
+                    let peliDiv = document.createElement("div");
+                    peliDiv.classList.add("movie");
+                    peliDiv.innerHTML = `
+                        <h3>${peli.title}</h3>
+                        <p><strong>Género:</strong> ${peli.genre}</p>
+                        <p><strong>Año:</strong> ${peli.year}</p>
+                        <p><strong>Calificación:</strong> ${peli.rating}</p>
+                    `;
+                    resultadosDiv.appendChild(peliDiv);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
